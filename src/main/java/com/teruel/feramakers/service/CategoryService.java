@@ -25,7 +25,9 @@ public class CategoryService {
     public CategoryDTO save (CategoryDTO categoryDTO) {
 
         Category categorySaved = categoryRepository.save(categoryMapper.mapDtoToCategory(categoryDTO));
+
         categoryDTO.setCategoryId(categorySaved.getCategoryId());
+
         return categoryDTO;
     }
 
@@ -40,6 +42,7 @@ public class CategoryService {
          return categoriesList;
     }
 
+    @Transactional (readOnly = true)
     public CategoryDTO getCategory (Long categoryId) {
 
         Category category = categoryRepository.findById(categoryId)

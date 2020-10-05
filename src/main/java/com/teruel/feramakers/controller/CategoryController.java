@@ -30,8 +30,8 @@ public class CategoryController {
                 .body(categoryService.getAllCategories());
     }
 
-    @GetMapping("/get/{id}")
-    public ResponseEntity<CategoryDTO> getCateogry(@PathVariable Long categoryId) {
+    @GetMapping("/get/{categoryId}")
+    public ResponseEntity<CategoryDTO> getCategory(@PathVariable Long categoryId) {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(categoryService.getCategory(categoryId));
