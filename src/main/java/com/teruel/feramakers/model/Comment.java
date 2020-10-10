@@ -10,7 +10,7 @@ public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long commentId;
+    private Long commentId;
 
     @NotBlank(message = "Comment Content cannot be null or empty")
     private String commentContent;
@@ -30,7 +30,7 @@ public class Comment {
     @OneToMany(fetch = FetchType.LAZY)
     private List<SubComment> subComments;
 
-    public long getCommentId() {
+    public Long getCommentId() {
         return commentId;
     }
 

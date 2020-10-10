@@ -13,7 +13,7 @@ public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long postId;
+    private Long postId;
 
     @NotBlank(message = "Post Title cannot be null or empty")
     private String postTitle;
@@ -39,7 +39,7 @@ public class Post {
 
     private Instant createdDate;
 
-    public long getPostId() {
+    public Long getPostId() {
         return postId;
     }
 
