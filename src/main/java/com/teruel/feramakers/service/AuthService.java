@@ -9,6 +9,7 @@ import com.teruel.feramakers.model.VerificationToken;
 import com.teruel.feramakers.repository.UserRepository;
 import com.teruel.feramakers.repository.VerificationTokenRepository;
 import com.teruel.feramakers.security.JwtProvider;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -113,5 +114,10 @@ public class AuthService {
         System.out.println(token);
         return new AuthenticationResponse(token, loginRequest.getUsername());
 
+    }
+
+    public boolean isLoggedIn() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        return !(authentication instanceof AnonymousAuthenticationToken) && authentication.isAuthenticated();
     }
 }

@@ -1,5 +1,7 @@
 package com.teruel.feramakers.model;
 
+import org.mapstruct.Builder;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
